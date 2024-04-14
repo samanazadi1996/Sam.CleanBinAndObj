@@ -21,26 +21,33 @@ namespace CleanBinAndObj
             }
             else
             {
-                var currentSolution = await VS.Solutions.GetCurrentSolutionAsync();
-                CleanDirectory(Path.GetDirectoryName(currentSolution.FullPath));
+                var projects = await VS.Solutions.GetAllProjectsAsync();
+                foreach (var project in projects)
+                {
+                    CleanDirectory(Path.GetDirectoryName(project.FullPath));
+                }
             }
         }
 
         private void CleanDirectory(string directoryPath)
         {
-            var directories = Directory.GetDirectories(directoryPath, "*", SearchOption.AllDirectories);
-            var binAndObjDirectories = directories.Where(dir =>
-                Path.GetFileName(dir).Equals("obj", StringComparison.OrdinalIgnoreCase) ||
-                Path.GetFileName(dir).Equals("bin", StringComparison.OrdinalIgnoreCase)).ToArray();
-            foreach (var dir in binAndObjDirectories)
+            try
             {
-                Directory.Delete(dir, true);
+                var directories = Directory.GetDirectories(directoryPath, "*", SearchOption.AllDirectories);
+                var binAndObjDirectories = directories.Where(dir =>
+                    Path.GetFileName(dir).Equals("obj", StringComparison.OrdinalIgnoreCase) ||
+                    Path.GetFileName(dir).Equals("bin", StringComparison.OrdinalIgnoreCase)).ToArray();
+                foreach (var dir in binAndObjDirectories)
+                {
+                    Directory.Delete(dir, true);
+                }
             }
+            catch { }
         }
 
         private async Task ShowMessageBoxAsync()
         {
-            await VS.MessageBox.ShowAsync("Clean 'bin' and 'obj'", "The 'bin' and 'obj' directories have been cleaned successfully.",buttons:Microsoft.VisualStudio.Shell.Interop.OLEMSGBUTTON.OLEMSGBUTTON_OK);
+            await VS.MessageBox.ShowAsync("Clean 'bin' and 'obj'", "The 'bin' and 'obj' directories have been cleaned successfully.", buttons: Microsoft.VisualStudio.Shell.Interop.OLEMSGBUTTON.OLEMSGBUTTON_OK);
         }
     }
 }
