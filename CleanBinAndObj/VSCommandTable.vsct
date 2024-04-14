@@ -21,7 +21,6 @@
 		<Buttons>
 			<Button guid="CleanBinAndObj" id="MyCommand" priority="0x0100" type="Button">
 				<Parent guid="CleanBinAndObj" id="MyMenuGroup" />
-				<Icon guid="ImageCatalogGuid" id="StatusInformation" />
 				<CommandFlag>IconIsMoniker</CommandFlag>
 				<Strings>
 					<ButtonText>Clean Bin and Obj</ButtonText>

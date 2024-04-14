@@ -9,8 +9,7 @@ namespace CleanBinAndObj
     {
         public const string Id = "CleanBinAndObj.94f24be0-b7ee-4f99-9679-8a64ee82b079";
         public const string Name = "Clean Bin and Obj";
-        public const string Description = @"Adds command to clean bin and obj directories in solution
-";
+        public const string Description = @"This Visual Studio extension is designed to optimize project sizes by removing the 'bin' and 'obj' folders. With just one click, it deletes executable and temporary files, freeing up unnecessary space. This tool saves developers time by streamlining project cleanup tasks.";
         public const string Language = "en-US";
         public const string Version = "1.0";
         public const string Author = "samanazadi1996";

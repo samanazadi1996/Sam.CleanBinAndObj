@@ -3,8 +3,8 @@
     <Metadata>
         <Identity Id="CleanBinAndObj.94f24be0-b7ee-4f99-9679-8a64ee82b079" Version="1.0" Language="en-US" Publisher="samanazadi1996" />
         <DisplayName>Clean Bin and Obj</DisplayName>
-        <Description xml:space="preserve">Adds command to clean bin and obj directories in solution
-</Description>
+        <Description xml:space="preserve">This Visual Studio extension is designed to optimize project sizes by removing the 'bin' and 'obj' folders. With just one click, it deletes executable and temporary files, freeing up unnecessary space. This tool saves developers time by streamlining project cleanup tasks.</Description>
+        <MoreInfo>https://github.com/samanazadi1996/Sam.CleanBinAndObj</MoreInfo>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
     </Metadata>
