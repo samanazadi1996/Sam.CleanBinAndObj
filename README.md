@@ -11,7 +11,7 @@ This extension is tailored for the Visual Studio development environment, enabli
 
 To use the extension, simply right-click on your project or solution in Visual Studio, then select "Clean Bin and Obj" from the context menu. The extension will automatically remove the 'bin' and 'obj' folders from the project.
 
-[![](./Images/menu.png)](#)
+[![](./Documents/Images/menu.png)](#)
 
 
 # Note
