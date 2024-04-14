@@ -7,6 +7,7 @@
         <MoreInfo>https://github.com/samanazadi1996/Sam.CleanBinAndObj</MoreInfo>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
+        <Tags>bin,clean,cleanup,obj</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
