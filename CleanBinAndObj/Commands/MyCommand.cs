@@ -15,17 +15,17 @@ namespace CleanBinAndObj
         private async Task CleanBinAndObjAsync()
         {
             var activeProject = await VS.Solutions.GetActiveProjectAsync();
-            if (activeProject != null)
-            {
-                CleanDirectory(Path.GetDirectoryName(activeProject.FullPath));
-            }
-            else
+            if (activeProject is null)
             {
                 var projects = await VS.Solutions.GetAllProjectsAsync();
                 foreach (var project in projects)
                 {
                     CleanDirectory(Path.GetDirectoryName(project.FullPath));
                 }
+            }
+            else
+            {
+                CleanDirectory(Path.GetDirectoryName(activeProject.FullPath));
             }
         }
 
